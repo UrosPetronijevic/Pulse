@@ -17,7 +17,6 @@ const authStore = useAuthStore();
 
 <style scoped>
 .app-wrapper {
-  min-height: 100vh;
   background-color: #080c14;
 }
 </style>
