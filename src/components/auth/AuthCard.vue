@@ -43,15 +43,26 @@ defineProps({
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 520px;
+  width: 500px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
   z-index: 10;
-  padding: 56px;
+  padding: 40px 56px;
   background-color: #ffffff14;
   border: 1px solid #00e0ff40;
   border-radius: 24px;
   box-shadow: #00e0ff33 0px 0px 120px 0px, #00000066 0px 12px 80px 0px,
     #ffffff26 0px 1px 0px 0px inset;
   backdrop-filter: blur(40px);
+}
+
+.auth-card::-webkit-scrollbar {
+  display: none;
+}
+
+.auth-card {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .gradient-line {
