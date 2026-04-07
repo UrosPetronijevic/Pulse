@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted } from "vue";
+import { computed, onMounted, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useUsers } from "@/composables/useUsers";
 import UserProfileCard from "@/components/user/UserProfileCard.vue";
@@ -16,6 +16,10 @@ onMounted(fetchUsers);
 const user = computed(() => {
   const id = Number(route.params.id);
   return users.value.find((u) => u.id === id) ?? null;
+});
+
+watch(user, (val) => {
+  document.title = val ? `${val.fullName} — Pulse` : "Pulse";
 });
 
 const totalLogins = computed(() => (user.value ? user.value.id * 17 + 42 : 0));
