@@ -8,7 +8,7 @@ withDefaults(
   {
     size: 16,
     strokeWidth: 2,
-  },
+  }
 );
 
 type IconDef = {

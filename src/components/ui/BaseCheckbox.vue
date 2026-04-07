@@ -1,4 +1,6 @@
 <script setup>
+import BaseIcon from "@/components/ui/BaseIcon.vue";
+
 defineProps({
   modelValue: {
     type: Boolean,
@@ -17,19 +19,12 @@ defineEmits(["update:modelValue"]);
       :class="{ checked: modelValue, error: error }"
       @click="$emit('update:modelValue', !modelValue)"
     >
-      <svg
+      <BaseIcon
         v-if="modelValue"
+        name="check"
         class="checkbox-icon"
-        stroke="currentColor"
-        fill="none"
-        stroke-width="2.5"
-        viewBox="0 0 24 24"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <polyline points="20 6 9 17 4 12" />
-      </svg>
+        :stroke-width="2.5"
+      />
     </div>
     <div class="checkbox-label">
       <slot />

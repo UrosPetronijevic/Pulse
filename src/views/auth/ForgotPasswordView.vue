@@ -46,39 +46,13 @@ function handleSubmit() {
     >
       <template #icon>
         <div class="key-icon">
-          <svg
-            width="22"
-            height="22"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="1.75"
-            viewBox="0 0 24 24"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="7.5" cy="15.5" r="5.5" />
-            <path d="M21 2l-9.6 9.6" />
-            <path d="M15.5 7.5l3 3L22 7l-3-3" />
-          </svg>
+          <BaseIcon name="key" :size="22" :stroke-width="1.75" />
         </div>
       </template>
 
       <div class="form-container">
         <div v-if="submitted" class="success-box">
-          <svg
-            width="18"
-            height="18"
-            stroke="currentColor"
-            fill="none"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
+          <BaseIcon name="check" :size="18" />
           <span>Reset link sent! Check your inbox.</span>
         </div>
 
@@ -101,6 +75,7 @@ function handleSubmit() {
           </div>
         </template>
       </div>
+
       <div class="divider">
         <div class="divider-line" />
         <span class="divider-text">or</span>
@@ -108,20 +83,7 @@ function handleSubmit() {
       </div>
 
       <RouterLink to="/signin" class="back-link">
-        <svg
-          width="16"
-          height="16"
-          stroke="currentColor"
-          fill="none"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <line x1="19" y1="12" x2="5" y2="12" />
-          <polyline points="12 19 5 12 12 5" />
-        </svg>
+        <BaseIcon name="arrow-left" :size="16" />
         Back to sign in
       </RouterLink>
     </AuthCard>

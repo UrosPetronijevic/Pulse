@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BaseIcon from "@/components/ui/BaseIcon.vue";
+
 defineProps<{
   totalLogins: number;
   lastLogin: string;
@@ -19,19 +21,7 @@ function formatDate(dateStr: string): string {
   <div class="stat-cards">
     <div class="stat-card">
       <div class="stat-card-header">
-        <svg
-          width="14"
-          height="14"
-          stroke="currentColor"
-          fill="none"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="5" y1="12" x2="19" y2="12" />
-          <polyline points="12 5 19 12 12 19" />
-        </svg>
+        <BaseIcon name="arrow-right" :size="14" />
         <span class="stat-label">Total Logins</span>
       </div>
       <div class="stat-value">{{ totalLogins }}</div>
@@ -40,19 +30,7 @@ function formatDate(dateStr: string): string {
 
     <div class="stat-card">
       <div class="stat-card-header">
-        <svg
-          width="14"
-          height="14"
-          stroke="currentColor"
-          fill="none"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <circle cx="12" cy="12" r="10" />
-          <polyline points="12 6 12 12 16 14" />
-        </svg>
+        <BaseIcon name="clock" :size="14" />
         <span class="stat-label">Last Active</span>
       </div>
       <div class="stat-value">{{ formatDate(lastLogin) }}</div>
@@ -63,18 +41,7 @@ function formatDate(dateStr: string): string {
 
     <div class="stat-card">
       <div class="stat-card-header">
-        <svg
-          width="14"
-          height="14"
-          stroke="currentColor"
-          fill="none"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-        </svg>
+        <BaseIcon name="activity" :size="14" />
         <span class="stat-label">Sessions</span>
       </div>
       <div class="stat-value">{{ sessions }}</div>
