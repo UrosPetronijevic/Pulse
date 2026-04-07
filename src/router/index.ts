@@ -22,15 +22,15 @@ declare module "vue-router" {
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
-    redirect: "/signin",
+    redirect: "/sign-in",
   },
   {
-    path: "/signin",
+    path: "/sign-in",
     component: SignInView,
     meta: { requiresGuest: true },
   },
   {
-    path: "/signup",
+    path: "/sign-up",
     component: SignUpView,
     meta: { requiresGuest: true },
   },
@@ -56,7 +56,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: "/:pathMatch(.*)*",
-    redirect: "/signin",
+    redirect: "/sign-in",
   },
 ];
 
@@ -69,7 +69,7 @@ router.beforeEach((to) => {
   const authStore = useAuthStore();
 
   if (to.meta.requiresAuth && !authStore.isLoggedIn) {
-    return { path: "/signin" };
+    return { path: "/sign-in" };
   }
 
   if (to.meta.requiresGuest && authStore.isLoggedIn) {

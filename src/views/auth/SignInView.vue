@@ -106,7 +106,7 @@ function handleSubmit() {
 
         <p class="footer-text">
           Don't have an account?
-          <RouterLink to="/signup">Create one</RouterLink>
+          <RouterLink to="/sign-up">Create one</RouterLink>
         </p>
       </div>
     </AuthCard>
