@@ -139,7 +139,7 @@ function handleSubmit() {
 
         <p class="footer-text">
           Already have an account?
-          <RouterLink to="/signin">Sign in</RouterLink>
+          <RouterLink to="/sign-in">Sign in</RouterLink>
         </p>
       </div>
     </AuthCard>
