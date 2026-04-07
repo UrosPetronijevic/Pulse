@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import type { User } from "@/types/user";
+import BaseIcon from "@/components/ui/BaseIcon.vue";
 
 export type ColumnKey =
   | "id"
@@ -101,46 +102,25 @@ function userPath(id: number): string {
             <span class="th-inner">
               {{ columnLabels[col] }}
               <span v-if="sortableColumns.includes(col)" class="sort-indicator">
-                <svg
+                <BaseIcon
                   v-if="sortKey === col && sortDir === 'asc'"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polyline points="18 15 12 9 6 15" />
-                </svg>
-                <svg
+                  name="chevron-up"
+                  :size="10"
+                  :stroke-width="2.5"
+                />
+                <BaseIcon
                   v-else-if="sortKey === col && sortDir === 'desc'"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
-                <svg
+                  name="chevron-down"
+                  :size="10"
+                  :stroke-width="2.5"
+                />
+                <BaseIcon
                   v-else
-                  width="10"
-                  height="10"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  name="chevron-up"
+                  :size="10"
+                  :stroke-width="2.5"
                   class="sort-idle"
-                >
-                  <polyline points="18 15 12 9 6 15" />
-                </svg>
+                />
               </span>
             </span>
           </th>
@@ -186,23 +166,7 @@ function userPath(id: number): string {
               class="action-btn"
               @click.prevent="$router.push(userPath(user.id))"
             >
-              <svg
-                width="14"
-                height="14"
-                stroke="currentColor"
-                fill="none"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
+              <BaseIcon name="external-link" :size="14" />
             </a>
           </td>
         </tr>
