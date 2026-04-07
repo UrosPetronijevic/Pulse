@@ -55,6 +55,7 @@
   height: 40px;
   padding: 0 16px;
   border-radius: 8px;
+  border: 1px solid transparent;
   color: var(--text-secondary);
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-size: 14px;
@@ -66,7 +67,7 @@
 
 .nav-link.router-link-active {
   background-color: var(--accent-subtle);
-  border: 1px solid var(--accent-muted);
+  border-color: var(--accent-muted);
   color: var(--accent);
 }
 
