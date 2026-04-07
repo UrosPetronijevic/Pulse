@@ -1,12 +1,13 @@
 import { ref } from "vue";
 import type { User } from "@/types/user";
 
-export function useUsers() {
-  const users = ref<User[]>([]);
-  const loading = ref(false);
-  const error = ref<string | null>(null);
+const users = ref<User[]>([]);
+const loading = ref(false);
+const error = ref<string | null>(null);
 
+export function useUsers() {
   async function fetchUsers(): Promise<void> {
+    if (users.value.length > 0) return; // already fetched, skip
     loading.value = true;
     error.value = null;
     try {
