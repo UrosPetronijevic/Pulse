@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { useUsers } from "@/composables/useUsers";
-import UserTable from "@/components/user/UserTable.vue";
+import DashboardPanel from "@/components/dashboard/DashboardPanel.vue";
 import BaseIcon from "@/components/ui/BaseIcon.vue";
 
 const { users, loading, error, fetchUsers } = useUsers();
@@ -29,7 +29,9 @@ onMounted(fetchUsers);
     </div>
 
     <div v-else class="table-container">
-      <UserTable
+      <DashboardPanel
+        title="All Users"
+        dot="cyan"
         :users="users"
         :columns="[
           'id',

@@ -55,7 +55,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/users/:id",
     component: UserItemView,
-    meta: { requiresAuth: true, title: "User Details" },
+    meta: { requiresAuth: true },
   },
   {
     path: "/:pathMatch(.*)*",

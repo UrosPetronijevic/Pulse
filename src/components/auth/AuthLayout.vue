@@ -51,14 +51,16 @@ withDefaults(
 
       <div class="left-footer">
         <p class="left-tagline">
-          Create stunning interfaces with AI-powered precision.<br />
-          Ship faster, iterate smarter.
+          Monitor your users and platform health in real time.<br />
+          Stay in control, always.
         </p>
         <div class="trust-badges">
           <span class="badge"
             ><span class="badge-dot" />256-bit SSL encrypted</span
           >
-          <span class="badge"><span class="badge-dot" />SOC 2 compliant</span>
+          <span class="badge"
+            ><span class="badge-dot" />Role-based access control</span
+          >
           <span class="badge"><span class="badge-dot" />99.9% uptime</span>
         </div>
       </div>
